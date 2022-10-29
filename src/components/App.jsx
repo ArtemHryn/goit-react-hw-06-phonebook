@@ -10,9 +10,10 @@ import { Contacts } from './Contacts/Contacts';
 import { Title, ContactTitle, Container } from './App.styled';
 
 export const App = () => {
-  const contacts = useSelector(state => state.contact.contacts);
+  const contacts = useSelector(state => state.contact);
   const filter = useSelector(state => state.filter.filter)
   const dispatch = useDispatch()
+  console.log(contacts);
 
   const onFormSubmit = ({ name, number }) => {
     const checkContactName = contacts.some(contact => contact.name === name);
